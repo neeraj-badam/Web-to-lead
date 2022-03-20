@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function validate()
+        {
+            var phone = document.getElementById('phone').value;
+            var button = document.getElementById('button');
+            const regex = /^\+91 [0-9]{10}$/gm;
+            if(phone.match(regex))
+                button.style.visibility = 'visible';
+            else
+                button.style.visibility = 'hidden';
+        }
+    </script>
+    
+    <!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+    
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+    
+    <input type=hidden name="oid" value="00D5j000006Qb4r">
+    <input type=hidden name="retURL" value="https://www.mtxb2b.com/s/">
+    
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail"                                  -->
+    <!--  value="neerajkumar.badam@mtxb2b.com">                                   -->
+    <!--  ----------------------------------------------------------------------  -->
+    
+    <label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+    
+    <label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+    
+    Account Type:<select  id="00N5j000009QqUZ" name="00N5j000009QqUZ" title="Account Type"><option value="">--None--</option><option value="Saving">Saving</option>
+    <option value="Loan">Loan</option>
+    <option value="Credit Card">Credit Card</option>
+    </select><br>
+    
+    Current Generator(s):<input  id="00N5j00000APaai" maxlength="100" name="00N5j00000APaai" size="20" type="text" /><br>
+    
+    Age:<input  id="00N5j000009QqV3" name="00N5j000009QqV3" size="20" type="text" /><br>
+    
+    <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" onchange="validate()" /><br>
+    
+    <label for="lead_source">Lead Source</label><select  id="lead_source" name="lead_source"><option value="">--None--</option><option value="Web">Web</option>
+    <option value="Phone Inquiry">Phone Inquiry</option>
+    <option value="Partner Referral">Partner Referral</option>
+    <option value="Purchased List">Purchased List</option>
+    <option value="Other">Other</option>
+    </select><br>
+    
+    <label for="description">Description</label><textarea name="description"></textarea><br>
+    
+    <label for="company">Company</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
+    
+    <input type="submit" name="submit" id="button" style="visibility: hidden;">
+    
+    </form>
+    
+</body>
+</html>
