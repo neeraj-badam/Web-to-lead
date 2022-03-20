@@ -12,13 +12,19 @@
     <script>
         function validate()
         {
+            var message = document.getElementById('message');
             var phone = document.getElementById('phone').value;
             var button = document.getElementById('button');
             const regex = /^\+91 [0-9]{10}$/gm;
-            if(phone.match(regex))
+            if(phone.match(regex)){
                 button.style.visibility = 'visible';
+                message.innerHTML = '';
+            }
             else
+            {
                 button.style.visibility = 'hidden';
+                message.innerHTML = "Phone Number Should be in the following format: +91 8158181581";
+            }
         }
     </script>
     
@@ -54,19 +60,12 @@
     <option value="Loan">Loan</option>
     <option value="Credit Card">Credit Card</option>
     </select><br>
-    
-    Current Generator(s):<input  id="00N5j00000APaai" maxlength="100" name="00N5j00000APaai" size="20" type="text" /><br>
-    
+        
     Age:<input  id="00N5j000009QqV3" name="00N5j000009QqV3" size="20" type="text" /><br>
     
     <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" onchange="validate()" /><br>
-    
-    <label for="lead_source">Lead Source</label><select  id="lead_source" name="lead_source"><option value="">--None--</option><option value="Web">Web</option>
-    <option value="Phone Inquiry">Phone Inquiry</option>
-    <option value="Partner Referral">Partner Referral</option>
-    <option value="Purchased List">Purchased List</option>
-    <option value="Other">Other</option>
-    </select><br>
+    <small id="message"></small>
+    <br>
     
     <label for="description">Description</label><textarea name="description"></textarea><br>
     
